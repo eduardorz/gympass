@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Appointment } from "../components/Appointment";
-import { myAppointments } from "../helpers/myTurns"
+import { myTurns } from "../helpers/myTurns"
+import Appointment from "../components/Appointment"
 
 const MyAppointments = () => {
-    const [Appointment] = useState(myAppointments);  // ! REVISAR
+    const [turns, setTurns] = useState(myTurns);  // ! REVISAR
 
     return (
         <>
             <h1>Mis turnos</h1>
             <div>
-            { Appointment.map((appoinment)=>{
+            { turns.map((appoinment)=>{
                     return (
                         <Appointment
                             key={appoinment.id}
@@ -26,7 +26,3 @@ const MyAppointments = () => {
 }
 
 export default MyAppointments;
-
-
-
-// ! modificar el nombre de myTurns
