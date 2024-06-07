@@ -2,13 +2,14 @@ import { useState } from "react";
 import { myTurns } from "../helpers/myTurns"
 import Appointment from "../components/Appointment"
 
+
 const MyAppointments = () => {
     const [turns, setTurns] = useState(myTurns);  // ! REVISAR
 
     return (
         <>
             <h1>Mis turnos</h1>
-            <div>
+            <div >
             { turns.map((appoinment)=>{
                     return (
                         <Appointment

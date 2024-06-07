@@ -1,6 +1,9 @@
+
+import './MyAppointments.css';
+
 const Appointment = ({date,time,status,description}) => {
     return (
-        <div>
+        <div className="Appointment">
             <h4>{date}</h4>
             <h4>Time: {time}</h4>
             <h4>Status: {status}</h4>
