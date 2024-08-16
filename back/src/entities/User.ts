@@ -2,7 +2,6 @@ import { Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn
 import { Appointment } from "./Appointment"
 import { Credential } from "./Credential"
 
-
 @Entity({
     name: "users"
 })
@@ -19,12 +18,30 @@ export class User {
     email: string
 
     @Column()
+    password: string
+
+    @Column()
+    dni: number
+
+    @Column()
     age: number
 
     @Column()
-    nDni: number
+    phone: number
 
-    @OneToOne(() => Credential)
+    @Column({ type: 'date' })
+    birthday: Date;
+
+    @Column()
+    address: string
+
+    @Column()
+    city: string
+
+    @Column()
+    country: string
+
+    @OneToOne(() => Credential, credential => credential.user, { cascade: true })
     @JoinColumn()
     credential: Credential
 

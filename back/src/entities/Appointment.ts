@@ -15,14 +15,12 @@ export class Appointment {
     @Column()
     time: string
 
-    @Column()
-    description: string;
-
     @Column({ default : "active" })
     status: string
 
+    @Column()
+    description: string;
     
     @ManyToOne(()=> User, (user)=> user.appointment)
     user: User
-
-  }
+}

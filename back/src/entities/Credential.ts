@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { User } from "./User";
 
 @Entity( {
     name: "credentials"
@@ -9,8 +10,13 @@ export class Credential {
     id: number;
 
     @Column()
-    username: string;
+    email: string;
 
     @Column()
     password: string;
+
+    @OneToOne(() => User, (user) => user.credential)
+    @JoinColumn()
+    user: User
+
 }
