@@ -1,6 +1,9 @@
 import { Request, Response } from 'express';
-import { getUsersService, getUserByIdService, registerUserService, loginService } from './usersService';
+import { getUsersService, getUserByIdService, registerUserService } from './usersService';
+import { SECRET } from "../config/envs";
 import { User } from '../entities/User';
+import { checkCredentialService } from '../credentials/credentialService';
+import jwt from 'jsonwebtoken';
 import UserDto from './UserDto';
 import CredentialDto from '../credentials/CredentialDto';
 
@@ -10,7 +13,7 @@ export const getUsersController = async (req: Request, res: Response) => {
         const users: User[] = await getUsersService(); 
         res.status(200).json(users)
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(404).json({ error: error.message });
     }
 }
 
@@ -29,7 +32,6 @@ export const getUserByIdController = async (req: Request, res: Response) => {
 
 export const registerController = async (req: Request, res: Response) => {
     try {
-        console.log(req.body);
         const { name, email, password, dni, age, phone, birthday, address, city, country }: UserDto = req.body;
         const newUser = await registerUserService({ 
             name, email, password, dni, age, phone, birthday, address, city, country 
@@ -44,7 +46,8 @@ export const registerController = async (req: Request, res: Response) => {
 export const loginController = async (req: Request, res: Response) => {
     const { email, password }: CredentialDto = req.body;
     try {
-        const token = await loginService(email, password);
+        const credentialId = await checkCredentialService(email, password);
+        const token = jwt.sign({ id: credentialId }, SECRET, { expiresIn: '1h' });
         return res.status(200).json({ message: "Inicio de sesión exitoso", token });
     } catch (error) {
         console.error('Error en el inicio de sesión:', error);
