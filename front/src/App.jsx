@@ -1,20 +1,18 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Home from './views/Home';
-import Register from './views/Register';
-import Login from './views/Login';
-import MyAppointments from './views/MyAppointments';
+import Navbar from './components/pages/Navbar/Navbar';
 import { Routes, Route } from 'react-router-dom';
+import HomePage from './components/pages/HomePage/HomePage';
+import LoginPage from './components/pages/LoginPage/LoginPage';
+import AppointmentsPage from './components/pages/AppointmentsPage/AppointmentsPage';
 
 function App() {
     return (
         <>
             <Navbar />
             <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/myAppointments' element={<MyAppointments />} />
-                <Route path='/register' element={<Register />} />
+                <Route path='/' element={<HomePage />} />
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='/myAppointments' element={<AppointmentsPage />} />
             </Routes>
         </>
     )

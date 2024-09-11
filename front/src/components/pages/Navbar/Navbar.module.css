@@ -1,0 +1,31 @@
+.navbar {
+    background-color: white; /* Cambiado a blanco */
+    padding: 20px;
+    width: 100%; /* Ocupa todo el ancho */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fijo en la parte superior */
+    top: 0; /* Posición en la parte superior */
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    z-index: 1000; /* Para que esté encima del contenido */
+}
+
+.otherRoutes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333; /* Cambiado a un color oscuro para mejor contraste */
+    font-size: 18px; /* Ajustado tamaño de fuente */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 15px; /* Márgenes a los lados */
+}
+
+.navbarLogo {
+    max-width: 150px; /* Ajuste para que no sea muy grande */
+    height: auto;
+}

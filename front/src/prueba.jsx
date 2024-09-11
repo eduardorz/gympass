@@ -1,3 +1,0 @@
-
-
-const [input, setInput] = useState('');

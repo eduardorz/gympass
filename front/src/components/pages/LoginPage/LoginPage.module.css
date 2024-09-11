@@ -1,0 +1,95 @@
+/* LoginPage.module.css */
+
+/* Elimina cualquier margen, padding y centra el formulario */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .pageContainer {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
+    background-color: #f0f0f0; /* Color de fondo opcional */
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina paddings */
+  }
+  
+  .loginForm {
+    max-width: 400px;
+    margin: 40px auto; /* Centra horizontalmente */
+    padding: 30px 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+    /* Añadimos estas líneas para centrar en el contenedor */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+  }
+  
+  /* Estilo del título */
+  .loginForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Estilo de los inputs */
+  .loginForm input[type="email"],
+  .loginForm input[type="password"] {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Para un mejor control del tamaño */
+  }
+  
+  /* Enfocar en los inputs */
+  .loginForm input[type="email"]:focus,
+  .loginForm input[type="password"]:focus {
+    border-color: #4CAF50; /* Colores consistentes */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+  }
+  
+  /* Estilo de los mensajes de error */
+  .errorMessage {
+    color: #f00;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo del botón */
+  .loginForm button[type="submit"] {
+    width: 100%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave */
+  }
+  
+  /* Hover y deshabilitado del botón */
+  .loginForm button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  .loginForm button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
