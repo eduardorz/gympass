@@ -93,3 +93,16 @@ body, html {
     cursor: not-allowed;
   }
   
+  .linkButton {
+    display: block;
+    text-align: center;
+    margin-top: 20px; /* Ajusta el espacio superior aquí */
+    color: #007bff;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .linkButton:hover {
+    text-decoration: underline;
+  }

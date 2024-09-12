@@ -1,8 +1,13 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import styles from './LoginPage.module.css';
 
 function LoginPage() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+        navigate('/register');
+  };
   return (
     <div className={styles.pageContainer}>
         <div className={styles.loginForm}>
@@ -31,16 +36,20 @@ function LoginPage() {
                 <Form>
                     <h2>Iniciar Sesión</h2>
                     <div>
-                    <Field type="email" name="email" placeholder="Correo electrónico" />
-                    <ErrorMessage name="email" component="div" className={styles.errorMessage} />
+                        <Field type="email" name="email" placeholder="Correo electrónico" />
+                        <ErrorMessage name="email" component="div" className={styles.errorMessage} />
                     </div>
                     <div>
-                    <Field type="password" name="password" placeholder="Contraseña" />
-                    <ErrorMessage name="password" component="div" className={styles.errorMessage} />
+                        <Field type="password" name="password" placeholder="Contraseña" />
+                        <ErrorMessage name="password" component="div" className={styles.errorMessage} />
                     </div>
                     <button type="submit" disabled={isSubmitting}>
-                    Iniciar sesión
+                        Iniciar sesión
                     </button>
+                    <a type="submit" onClick={handleClick} className={styles.linkButton}>
+                        ¿Aún no eres usuario?
+                    </a>
+
                 </Form>
                 )}
             </Formik>
