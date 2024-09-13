@@ -43,18 +43,7 @@ function AppointmentsPage() {
   };
 
   return (
-  <>
-  <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+  
   <div className={styles.pageContainer}>
       
       <h1 className={styles.title}>Turnos Disponibles</h1>
@@ -89,7 +78,6 @@ function AppointmentsPage() {
         </div>
       )}
     </div>
-  </>
     
   );
 }

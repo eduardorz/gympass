@@ -2,6 +2,8 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './RegisterPage.module.css'; // Importa los estilos
+import trainingImage from '../../../assets/training.jpg';
+
 
 // Esquema de validación con Yup
 const RegisterSchema = Yup.object().shape({
@@ -18,6 +20,20 @@ const RegisterSchema = Yup.object().shape({
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('password'), null], 'Las contraseñas deben coincidir')
     .required('Confirme su contraseña'),
+  dni: Yup.string()
+    .required('El DNI es requerido'),
+  age: Yup.number()
+    .required('La edad es requerida'),
+  phone: Yup.string()
+    .required('El teléfono es requerido'),
+  birthday: Yup.date()
+    .required('La fecha de nacimiento es requerida'),
+  address: Yup.string()
+    .required('La dirección es requerida'),
+  city: Yup.string()
+    .required('La ciudad es requerida'),
+  country: Yup.string()
+    .required('El país es requerido'),
 });
 
 const RegisterPage = () => {
@@ -26,67 +42,113 @@ const RegisterPage = () => {
       <div className={styles.registerForm}>
         <h2>Registrarse</h2>
         <Formik
-          initialValues={{ name: '', email: '', password: '', confirmPassword: '' }}
+          initialValues={{
+            name: '', email: '', password: '', confirmPassword: '', dni: '', age: '', phone: '',
+            birthday: '', address: '', city: '', country: ''
+          }}
           validationSchema={RegisterSchema}
           onSubmit={(values) => {
             console.log(values);
-            // Aquí puedes agregar la lógica para manejar el registro del usuario
+            // Lógica para manejar el registro del usuario
           }}
         >
           {({ isSubmitting }) => (
-            <Form>
-              <div className={styles.formGroup}>
-                <h4>Nombre</h4>
-                <Field
-                  type="text"
-                  name="name"
-                  id="name"
-                  className={styles.inputField}
-                />
-                <ErrorMessage name="name" component="div" className={styles.errorMessage} />
-              </div>
+            <div className={styles.formContainer}>
+            <div className={styles.imageSection}>
+              <img src={trainingImage} alt="Entrenamiento" className={styles.trainingImage} />
+              
+            </div>
+          
+            <div className={styles.registerForm}>
+              <Form>
+                <div className={styles.formRow}>
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>Nombre</h4>
+                    <Field type="text" name="name" className={styles.inputField} />
+                    <ErrorMessage name="name" component="div" className={styles.errorMessage} />
+                  </div>
 
-              <div className={styles.formGroup}>
-                <h4>Correo Electrónico</h4>
-                <Field
-                  type="email"
-                  name="email"
-                  id="email"
-                  className={styles.inputField}
-                />
-                <ErrorMessage name="email" component="div" className={styles.errorMessage} />
-              </div>
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>Correo Electrónico</h4>
+                    <Field type="email" name="email" className={styles.inputField} />
+                    <ErrorMessage name="email" component="div" className={styles.errorMessage} />
+                  </div>
+                </div>
 
-              <div className={styles.formGroup}>
-                <h4>Contraseña</h4>
-                <Field
-                  type="password"
-                  name="password"
-                  id="password"
-                  className={styles.inputField}
-                />
-                <ErrorMessage name="password" component="div" className={styles.errorMessage} />
-              </div>
+                <div className={styles.formRow}>
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>Contraseña</h4>
+                    <Field type="password" name="password" className={styles.inputField} />
+                    <ErrorMessage name="password" component="div" className={styles.errorMessage} />
+                  </div>
 
-              <div className={styles.formGroup}>
-                <h4>Confirmar Contraseña</h4>
-                <Field
-                  type="password"
-                  name="confirmPassword"
-                  id="confirmPassword"
-                  className={styles.inputField}
-                />
-                <ErrorMessage name="confirmPassword" component="div" className={styles.errorMessage} />
-              </div>
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>Confirmar Contraseña</h4>
+                    <Field type="password" name="confirmPassword" className={styles.inputField} />
+                    <ErrorMessage name="confirmPassword" component="div" className={styles.errorMessage} />
+                  </div>
+                </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={styles.submitButton}
-              >
-                Registrarse
-              </button>
-            </Form>
+                <div className={styles.formRow}>
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>DNI</h4>
+                    <Field type="text" name="dni" className={styles.inputField} />
+                    <ErrorMessage name="dni" component="div" className={styles.errorMessage} />
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>Edad</h4>
+                    <Field type="number" name="age" className={styles.inputField} />
+                    <ErrorMessage name="age" component="div" className={styles.errorMessage} />
+                  </div>
+                </div>
+
+                <div className={styles.formRow}>
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>Teléfono</h4>
+                    <Field type="text" name="phone" className={styles.inputField} />
+                    <ErrorMessage name="phone" component="div" className={styles.errorMessage} />
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>Fecha de Nacimiento</h4>
+                    <Field type="date" name="birthday" className={styles.inputField} />
+                    <ErrorMessage name="birthday" component="div" className={styles.errorMessage} />
+                  </div>
+                </div>
+
+                <div className={styles.formRow}>
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>Dirección</h4>
+                    <Field type="text" name="address" className={styles.inputField} />
+                    <ErrorMessage name="address" component="div" className={styles.errorMessage} />
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>Ciudad</h4>
+                    <Field type="text" name="city" className={styles.inputField} />
+                    <ErrorMessage name="city" component="div" className={styles.errorMessage} />
+                  </div>
+                </div>
+
+                <div className={styles.formRow}>
+                  <div className={styles.formGroup}>
+                    <h4 className={styles.fieldTitle}>País</h4>
+                    <Field type="text" name="country" className={styles.inputField} />
+                    <ErrorMessage name="country" component="div" className={styles.errorMessage} />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={styles.submitButton}
+                >
+                  Registrarse
+                </button>
+              </Form>
+            </div>
+          </div>
           )}
         </Formik>
       </div>

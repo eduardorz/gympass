@@ -2,14 +2,17 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh; /* Asegura que ocupe toda la ventana */
-  background-color: #d6c8c8;
+  background-color: #e0dddd;
+  display: flex; /* Centra el contenido en el cuerpo */
+  justify-content: center; /* Alinea el contenido al centro horizontalmente */
+  align-items: center; /* Alinea el contenido al centro verticalmente */
 }
 
 .pageContainer {
-  width: 90%; /* Ancho del 100% del contenedor padre */
-  max-width: 2700px; /* Limita el ancho máximo */
-  margin: 200px; /* Centra el contenedor y agrega espacio alrededor */
-  padding: 120px;
+  width: 90%; /* Ancho del 90% del contenedor padre */
+  max-width: 1200px; /* Limita el ancho máximo a un tamaño razonable */
+  margin: 0 auto; /* Centra el contenedor automáticamente */
+  padding: 40px; /* Ajusta el espacio interno del contenedor */
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
