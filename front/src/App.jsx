@@ -7,20 +7,21 @@ import AppointmentsPage from './components/pages/AppointmentsPage/AppointmentsPa
 import RegisterPage from './components/pages/RegisterPage/RegisterPage';
 import Footer from './components/pages/Footer/Footer';
 
-
 function App() {
     return (
-        <>
+        <div id="app">
             <Navbar />
-            <Routes>
-                <Route path='/' element={<HomePage />} />
-                <Route path='/login' element={<LoginPage />} />
-                <Route path='/myAppointments' element={<AppointmentsPage />} />
-                <Route path='/register' element={<RegisterPage />} />
-            </Routes>
-            <Footer />
-        </>
-    )
+            {/* Contenedor principal del contenido de la aplicación */}
+            <main>
+                <Routes>
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='/login' element={<LoginPage />} />
+                    <Route path='/myAppointments' element={<AppointmentsPage />} />
+                    <Route path='/register' element={<RegisterPage />} />
+                </Routes>
+            </main>
+        </div>
+    );
 }
 
-export default App
+export default App;

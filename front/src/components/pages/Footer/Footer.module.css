@@ -1,59 +1,50 @@
 .footer {
-    background-color: #383535; /* Color de fondo blanco */
-    padding: 20px;
-    width: 100%; /* Ocupa todo el ancho */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed; /* Fijo en la parte inferior */
-    bottom: 0; /* Posición en la parte inferior */
-    left: 0;
-    right: 0;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
-    z-index: 1000; /* Para que esté encima del contenido */
-  }
-  
-  .footerContent {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .logo {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .logoImage {
-    max-width: 150px; /* Ajuste para que no sea muy grande */
-  }
-  
-  .info, .branches, .socialMedia {
-    flex: 1;
-    text-align: center;
-  }
-  
-  h4 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #ffffff; /* Color oscuro para el texto */
-  }
-  
-  p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #dad6d6; /* Color gris para el texto */
-  }
-  
-  
-  .socialLink {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #ffffff; /* Color de los enlaces */
-  }
-  
-  .socialLink:hover {
-    text-decoration: underline;
-  }
-  
+  background-color: #383636; /* Negro */
+  color: #fff; /* Blanco */
+  padding: 20px;
+  text-align: center;
+  position: relative;/* Fijo al fondo de la página */
+  bottom: 0; /* Abajo */
+  width: 100%; /* Ancho completo */
+  z-index: 1000; /* Por encima de otros elementos */
+}
+
+.footerContent {
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centrado */
+  padding: 20px;
+  display: flex; /* Flexbox para alinear elementos */
+  justify-content: space-between; /* Espacio entre elementos */
+  align-items: center; /* Alinear verticalmente */
+}
+
+.logo {
+  margin-right: 20px; /* Espacio entre logo y contenido */
+}
+
+.logoImage {
+  width: 190px; /* Tamaño del logo */
+  height: auto;
+}
+
+.info, .branches, .socialMedia {
+  margin-right: 20px; /* Espacio entre secciones */
+}
+
+.info h4, .branches h4, .socialMedia h4 {
+  margin-bottom: 10px; /* Espacio entre título y contenido */
+}
+
+.socialLink {
+  margin-right: 10px; /* Espacio entre enlaces */
+  color: #fff; /* Blanco */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.socialLink:hover {
+  color: #ccc; /* Gris claro al pasar el mouse */
+}
+
+p {
+  color: #cac7c7;
+}

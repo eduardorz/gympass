@@ -1,0 +1,19 @@
+/* Establece el contenedor principal para ocupar todo el alto de la pantalla */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* El contenedor principal de la aplicación debe usar Flexbox */
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hace que ocupe al menos el 100% de la altura de la pantalla */
+  }
+  
+  /* Asegura que el contenido principal se expanda */
+  main {
+    flex: 1; /* Esto hace que el contenido crezca para ocupar el espacio restante */
+  }
+  

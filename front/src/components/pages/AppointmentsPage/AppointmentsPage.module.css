@@ -1,101 +1,122 @@
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh; /* Asegura que ocupe toda la ventana */
-  background-color: #e0dddd;
-  display: flex; /* Centra el contenido en el cuerpo */
-  justify-content: center; /* Alinea el contenido al centro horizontalmente */
-  align-items: center; /* Alinea el contenido al centro verticalmente */
+main {
+  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+  margin: 0; /* Elimina cualquier margen */
+  padding: 0; /* Elimina cualquier padding */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
 .pageContainer {
-  width: 90%; /* Ancho del 90% del contenedor padre */
-  max-width: 1200px; /* Limita el ancho máximo a un tamaño razonable */
-  margin: 0 auto; /* Centra el contenedor automáticamente */
-  padding: 40px; /* Ajusta el espacio interno del contenedor */
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 300px;
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la pantalla */
+  justify-content: space-between; /* Para distribuir las secciones */
 }
 
 .title {
-  text-align: center;
-  font-size: 24px;
+  font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 20px;
-  color: black;
-}
-
-.dateTitle {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: black;
 }
 
 .filterContainer {
-  display: flex;
-  flex-direction: column; /* Cambia a columna para mejor alineación en móviles */
-  justify-content: center;
-  align-items: center;
   margin-bottom: 20px;
 }
 
-.dateInput {
-  margin-top: 10px; /* Ajusta el margen superior */
-  padding: 5px;
-  font-size: 16px;
+.dateTitle {
+  margin-right: 10px;
 }
+
+.dateInput {
+  padding: 5px;
+}
+
+.appointmentsListContainer {
+  max-height: 400px; /* Altura máxima del contenedor */
+  overflow-y: auto; /* Habilita el scroll vertical */
+  margin-top: 20px;
+  padding: 100px;
+  box-sizing: border-box; /* Asegura que el padding no afecte las dimensiones */
+}
+
+.appointmentsListContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y navegadores basados en WebKit */
+}
+
 
 .appointmentsList {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 100%; /* Asegura que la lista ocupe todo el ancho disponible */
-  margin: 20px 0;
+  align-items: center; /* Centraliza los elementos en el eje vertical */
+  justify-content: center; /* Centraliza los elementos en el eje horizontal */
+  margin: 20px auto;
+  width: 100%; /* Ajusta el ancho del contenedor */
+  max-width: 900px; /* Limita el tamaño máximo */
+  padding: 20px; /* Espacio interno */
+  background-color: #f9f9f9; /* Fondo claro para destacar */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
 }
 
 .appointmentItem {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Distribuye el contenido en los extremos */
   align-items: center;
-  padding: 10px 15px;
-  background-color: #000000; /* Cambié a blanco para mayor contraste */
+  flex-grow: 1;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #444343;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; /* Línea divisoria entre turnos */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Añade una sombra leve */
 }
 
 .time {
-  flex: 2; /* Ajusta el espacio tomado */
-  text-align: left;
-}
-
-.description {
-  flex: 4; /* Ajusta el espacio proporcional */
-  text-align: center;
-  padding: 0 15px;
-}
-
-.reserveButton, .cancelButton {
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .reserveButton {
-  background-color: #4CAF50;
-}
-
-.reserveButton:hover {
-  background-color: #45a049;
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
 }
 
 .cancelButton {
-  background-color: #f44336;
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
 }
 
-.cancelButton:hover {
-  background-color: #e53935;
+.scheduleSection {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.branchesSection {
+  margin-top: 40px;
+  text-align: center;
+  background-color: antiquewhite;
+}
+
+.scheduleSection h2, .branchesSection h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin: 15px auto;
+  padding: 0 auto;
+}
+
+/* Estilo para los párrafos dentro de las secciones */
+.scheduleSection p, .branchesSection p {
+  font-size: 1rem;
+  margin-bottom: 5px;
 }

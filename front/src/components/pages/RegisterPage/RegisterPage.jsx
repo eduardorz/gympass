@@ -39,6 +39,7 @@ const RegisterSchema = Yup.object().shape({
 const RegisterPage = () => {
   return (
     <div className={styles.pageContainer}>
+      <main className={styles.mainContent}>
       <div className={styles.registerForm}>
         <h2>Registrarse</h2>
         <Formik
@@ -152,6 +153,7 @@ const RegisterPage = () => {
           )}
         </Formik>
       </div>
+      </main>
     </div>
   );
 };

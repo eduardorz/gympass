@@ -11,7 +11,7 @@ body, html {
     height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
     display: flex;
     flex-direction: column; /* Organiza los elementos en columna */
-    padding: 0;
+    padding-top: 80px;
 }
 
 .hero-section {
@@ -19,21 +19,24 @@ body, html {
     background-size: cover;
     background-position: center;
     width: 100vw;
-    height: calc(100vh - 80px); /* Ajusta la altura restando el tamaño del navbar */
+    height: calc(100vh - 20px); /* Ajusta la altura restando el tamaño del navbar */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    margin: 30px auto;
+    padding: 370px;
     position: relative;
     box-sizing: border-box;
+    color: white;
+    z-index: 1;
 }
 
 .welcome-text {
     display: flex;
     flex-direction: column;
     background-color: #0c0c0b; /* Color de fondo para resaltar el texto */
-    padding: 5px; /* Agrega un poco de espacio interior */
+    margin: 20px;
+    padding: 25px; /* Agrega un poco de espacio interior */
     border-radius: 5px; /* Agrega un borde redondeado */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra para dar profundidad */
 }
@@ -42,4 +45,93 @@ body, html {
     background-color: #fff; /* Color de fondo para el contenido adicional */
     padding: 20px; /* Agrega un poco de espacio interior */
     flex: 1; /* Ajusta el tamaño para que ocupe el espacio restante */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.testimonials-section {
+    padding: 40px 50px;
+    background-color: #707070;
+}
+  
+.testimonials-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    flex-wrap: wrap; /* Permite que se reorganicen si el espacio es limitado */
+    gap: 20px; /* Espacio entre los testimonios */
+}
+
+.testimonial {
+    flex: 1;
+    min-width: 250px; /* Mínimo ancho para mantener los bloques organizados */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fondo suave para los testimonios */
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Ligera sombra para destacar */
+}
+
+blockquote {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #555; /* Color suave para el texto */
+}
+
+p {
+    font-weight: bold;
+    color: #1a1919;
+    margin: 0;
+}
+
+
+
+/* Lista de opciones de entrenamiento y horarios */
+ul {
+  list-style-type: disc; /* Listas con viñetas */
+  margin-left: 20px; /* Separación izquierda de las viñetas */
+}
+
+ul li {
+  font-size: 1rem;
+  margin-bottom: 8px; /* Espacio entre los elementos de la lista */
+}
+
+
+/* Galería de fotos */
+.trainings-gallery {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.trainings-gallery h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Estilo de la galería */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Estilo para las imágenes dentro de la galería */
+.galleryImage {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.galleryImage:hover {
+  transform: scale(1.05); /* Efecto al pasar el mouse */
 }
