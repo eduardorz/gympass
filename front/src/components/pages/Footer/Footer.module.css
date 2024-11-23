@@ -1,12 +1,15 @@
 .footer {
-  background-color: #383636; /* Negro */
-  color: #fff; /* Blanco */
+  position: static; /* Asegura que esté fijo al fondo */
+  bottom: 0; /* Lo posiciona al fondo */
+  width: 100%; /* Ocupa todo el ancho de la página */
+  display: flex; /* Flexbox para centrar contenido */
+  justify-content: center; /* Centra contenido horizontalmente */
+  align-items: center; /* Centra contenido verticalmente */
   padding: 20px;
   text-align: center;
-  position: relative;/* Fijo al fondo de la página */
-  bottom: 0; /* Abajo */
-  width: 100%; /* Ancho completo */
-  z-index: 1000; /* Por encima de otros elementos */
+  background-color: #3d3a3a; /* Color de fondo */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacarlo */
+  z-index: 1000; /* Asegura que esté sobre otros elementos */
 }
 
 .footerContent {

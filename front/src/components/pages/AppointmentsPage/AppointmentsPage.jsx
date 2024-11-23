@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styles from './AppointmentsPage.module.css';
 import Footer from '../Footer/Footer'
 
+import caracasHQ from '../../../assets/sucursal_2.png';
+import valenciaHQ from '../../../assets/sucursal_3.png';
+import buenosairesHQ from '../../../assets/sucursal_1.png';
+import mardelplataHQ from '../../../assets/sucursal_4.png';
+
+
 function AppointmentsPage() {
   const [appointments, setAppointments] = useState([]);
   const [selectedDate, setSelectedDate] = useState('');
@@ -45,7 +51,7 @@ function AppointmentsPage() {
 
       {/* Sección para filtrar por fecha */}
       <div className={styles.filterContainer}>
-        <label className={styles.dateTitle} htmlFor="date">Selecciona una fecha:</label>
+        <label className={styles.dateTitle} htmlFor="date">Selecciona una fecha </label>
         <input 
           type="date" 
           id="date" 
@@ -74,23 +80,6 @@ function AppointmentsPage() {
           ))}
         </div>
       )}
-
-      {/* Sección de horarios de atención */}
-      <div className={styles.scheduleSection}>
-        <h2>Horarios de Atención</h2>
-        <p>Lunes a Viernes: 6:00 AM - 10:00 PM</p>
-        <p>Sábados: 8:00 AM - 8:00 PM</p>
-        <p>Domingos: 9:00 AM - 6:00 PM</p>
-      </div>
-
-      {/* Sección de sucursales */}
-      <div className={styles.branchesSection}>
-        <h2>Nuestras Sucursales</h2>
-        <p>Buenos Aires, Argentina</p>
-        <p>Mar del Plata, Argentina</p>
-        <p>Caracas, Venezuela</p>
-        <p>Valencia, Venezuela</p>
-      </div>
 
       <Footer />
     </div>

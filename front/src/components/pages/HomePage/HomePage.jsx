@@ -27,7 +27,7 @@ function HomePage() {
 
       {/* Contenedor de la galería de fotos */}
       <div className={styles['trainings-gallery']}>
-        <h3 className='text-2xl font-bold'>ALGUNOS DE NUESTROS ENTRENAMIENTOS DISPONIBLES...</h3>
+        <h3 className='text-2xl font-bold text-white'>ALGUNOS DE NUESTROS ENTRENAMIENTOS DISPONIBLES...</h3>
         <div className={styles.gallery}>
           <img src={musculationImage} alt="Gimnasio" className={styles.galleryImage} />
           <img src={crossfitImage} alt="Crossfit" className={styles.galleryImage} />

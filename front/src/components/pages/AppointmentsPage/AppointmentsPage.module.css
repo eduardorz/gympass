@@ -1,18 +1,20 @@
-main {
-  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
-  margin: 0; /* Elimina cualquier margen */
-  padding: 0; /* Elimina cualquier padding */
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .pageContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Centrar verticalmente */
   padding: 20px;
-  margin-top: 300px;
-  min-height: 100vh; /* Asegura que el contenedor ocupe toda la pantalla */
-  justify-content: space-between; /* Para distribuir las secciones */
+  margin-top: 70px;
+  min-height: 100vh; /* Asegura el uso de toda la pantalla */
+  width: 100%;
 }
 
 .title {
@@ -22,7 +24,7 @@ main {
 }
 
 .filterContainer {
-  margin-bottom: 20px;
+  margin-top: 2px;
 }
 
 .dateTitle {
@@ -34,89 +36,62 @@ main {
 }
 
 .appointmentsListContainer {
-  max-height: 400px; /* Altura máxima del contenedor */
-  overflow-y: auto; /* Habilita el scroll vertical */
-  margin-top: 20px;
-  padding: 100px;
-  box-sizing: border-box; /* Asegura que el padding no afecte las dimensiones */
+  margin: auto; /* Centra horizontal y verticalmente */
+  display: flex;
+  flex-direction: column; /* Ordena los turnos en columna */
+  justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .appointmentsListContainer::-webkit-scrollbar {
-  display: none; /* Chrome, Safari y navegadores basados en WebKit */
-}
-
-
-.appointmentsList {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centraliza los elementos en el eje vertical */
-  justify-content: center; /* Centraliza los elementos en el eje horizontal */
-  margin: 20px auto;
-  width: 100%; /* Ajusta el ancho del contenedor */
-  max-width: 900px; /* Limita el tamaño máximo */
-  padding: 20px; /* Espacio interno */
-  background-color: #f9f9f9; /* Fondo claro para destacar */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+  display: none;
 }
 
 .appointmentItem {
   width: 100%;
   display: flex;
-  justify-content: space-between; /* Distribuye el contenido en los extremos */
+  justify-content: space-between;
   align-items: center;
-  flex-grow: 1;
-  padding: 10px;
+  padding: 7px;
   margin-bottom: 10px;
   background-color: #444343;
-  border: 1px solid #ccc;
+  border: 1px solid #424242;
   border-radius: 5px;
-  border-bottom: 1px solid #ddd; /* Línea divisoria entre turnos */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Añade una sombra leve */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.time {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.reserveButton {
-  background-color: #3498db;
-  color: white;
-  padding: 5px 10px;
-  border: none;
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
   cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
-.cancelButton {
-  background-color: #e74c3c;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-}
-
-.scheduleSection {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.branchesSection {
-  margin-top: 40px;
-  text-align: center;
-  background-color: antiquewhite;
-}
-
-.scheduleSection h2, .branchesSection h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  margin: 15px auto;
-  padding: 0 auto;
-}
-
-/* Estilo para los párrafos dentro de las secciones */
-.scheduleSection p, .branchesSection p {
-  font-size: 1rem;
-  margin-bottom: 5px;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }
