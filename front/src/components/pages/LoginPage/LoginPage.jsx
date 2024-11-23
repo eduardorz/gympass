@@ -25,11 +25,30 @@ function LoginPage() {
                 }
                 return errors;
                 }}
-                onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                }, 400);
+                onSubmit={async (values, { setSubmitting }) => {
+                    try {
+                        const response = await fetch('http://localhost:3003/users/login', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(values),
+                        });
+                
+                        if (!response.ok) {
+                            throw new Error('Error en el inicio de sesión');
+                        }
+                
+                        const data = await response.json();
+                        alert(`Inicio de sesión exitoso. Token: ${data.token}`);
+                        // Puedes guardar el token en el localStorage o manejar la navegación
+                        // localStorage.setItem('token', data.token);
+                        // navigate('/home');
+                    } catch (error) {
+                        alert('Error: ' + error.message);
+                    } finally {
+                        setSubmitting(false);
+                    }
                 }}
             >
                 {({ isSubmitting }) => (

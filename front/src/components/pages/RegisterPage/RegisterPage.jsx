@@ -48,9 +48,33 @@ const RegisterPage = () => {
             birthday: '', address: '', city: '', country: ''
           }}
           validationSchema={RegisterSchema}
-          onSubmit={(values) => {
-            console.log(values);
-            // Lógica para manejar el registro del usuario
+          onSubmit={(values, { setSubmitting, resetForm }) => {
+            // Evita que el botón se quede deshabilitado permanentemente
+            setSubmitting(true);
+          
+            fetch('http://localhost:3003/users/register', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(values),
+            })
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error('Error en el registro');
+                }
+                return response.json();
+              })
+              .then((data) => {
+                alert('¡Registro exitoso!');
+                resetForm(); // Limpia el formulario
+              })
+              .catch((error) => {
+                alert('Hubo un problema: ' + error.message);
+              })
+              .finally(() => {
+                setSubmitting(false); // Habilita el botón nuevamente
+              });
           }}
         >
           {({ isSubmitting }) => (
